@@ -5,12 +5,9 @@ import mapValues from 'lodash/object/mapValues';
 import data from '../data';
 
 export default function appState( state = data.appState, action ){
-	console.log( action );
-	
-	switch( action ){
+	switch( action.type ){
 		case types.SELECT_LABEL:
-			return Object.assign( {}, state, { selectedLabel: action.id } )
-
+			return Object.assign( {}, state, { selectedLabel: action.id } );
 		default:
 			return state;
 	}

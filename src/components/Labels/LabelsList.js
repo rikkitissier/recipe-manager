@@ -9,10 +9,24 @@ var LabelsList = React.createClass({
 		return (
 			<div className='App-labels'>
 				<ul>
-					<LabelsItem title='All Recipes' slug='all' id='all' selected={true} />
+					<LabelsItem 
+						title='All Recipes'
+						slug='all'
+						id={0}
+						selected={this.props.selectedLabel === 0 ? true : false}
+						{...this.props.appActions} />
 					{
 						this.props.labels.map( (label) => {
-							return <LabelsItem key={label.id} title={label.title} slug={label.slug} id={label.id} {...this.props.labelActions} {...this.props.appActions} />
+							return (
+								<LabelsItem 
+									key={label.id}
+									title={label.title}
+									slug={label.slug}
+									id={label.id}
+									selected={this.props.selectedLabel == label.id ? true : false}
+									{...this.props.labelActions}
+									{...this.props.appActions} />
+							)
 						}) 
 					}
 				</ul>

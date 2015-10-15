@@ -10,8 +10,15 @@ var AppLayout = React.createClass({
 			<div className='App'>
 				<Header />
 				<div className='App-layout'>
-					<LabelsList labels={this.props.labels} labelActions={this.props.labelActions} appActions={this.props.appStateActions} />
-					<RecipesList recipes={this.props.recipes} recipeActions={this.props.recipeActions} appActions={this.props.appStateActions} />
+					<LabelsList 
+						labels={this.props.labels}
+						selectedLabel={this.props.appState.selectedLabel}
+						labelActions={this.props.labelActions}
+						appActions={this.props.appStateActions} />
+					<RecipesList 
+						recipes={this.props.recipes}
+						recipeActions={this.props.recipeActions}
+						appActions={this.props.appStateActions} />
 					<div className='App-recipe'>A recipe</div>
 				</div>
 			</div>

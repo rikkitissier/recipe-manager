@@ -14,7 +14,7 @@ let mapStateToProps = (state) => ({
 
 var AppContainer = React.createClass({
 	render: function () {
-		const { labels, recipes, dispatch } = this.props;
+		const { labels, recipes, appState, dispatch } = this.props;
 		const labelActions = bindActionCreators(LabelActions, dispatch);
 		const recipeActions = bindActionCreators(RecipeActions, dispatch);
 		const appStateActions = bindActionCreators(AppStateActions, dispatch);
@@ -24,6 +24,7 @@ var AppContainer = React.createClass({
 				className='App'
 				labels={labels}
 				recipes={recipes}
+				appState={appState}
 				labelActions={labelActions}
 				recipeActions={recipeActions}
 				appStateActions={appStateActions} />
