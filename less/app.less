@@ -1,6 +1,10 @@
 @import "_vars.less";
 @import "_mixins.less";
 
+* {
+	box-sizing: border-box;
+}
+
 .App {
 	/* Just for debugging */
 	div > & {
@@ -44,12 +48,12 @@
 }
 
 .App-toolbar {
-	background: darken( @app-primary-color, 10% );
+	background: desaturate( darken( @app-primary-color, 5% ), 25% );
 	padding: 10px;
 
 	h2 {
 		.reset;
-		color: #fff;
+		color: fadeOut( #fff, 50% );
 		font-size: 14px;
 		font-weight: normal;
 	}

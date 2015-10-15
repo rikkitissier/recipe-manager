@@ -17,6 +17,7 @@ var AppLayout = React.createClass({
 						appActions={this.props.appStateActions} />
 					<RecipesList 
 						recipes={this.props.recipes}
+						selectedLabel={this.props.appState.selectedLabel}
 						recipeActions={this.props.recipeActions}
 						appActions={this.props.appStateActions} />
 					<div className='App-recipe'>A recipe</div>
