@@ -1,0 +1,56 @@
+@import "_vars.less";
+@import "_mixins.less";
+
+.App {
+	/* Just for debugging */
+	div > & {
+		margin-right: 300px;
+	}
+
+	.App-layout {
+		display: flex;
+		position: absolute;
+		top: 55px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+
+		.App-labels {
+			flex: 1;
+		}
+
+		.App-recipes {
+			flex: 2;
+		}
+
+		.App-recipe {
+			flex: 5;
+		}
+	}	
+}
+
+.AppHeader {
+	background: @app-primary-color;
+	padding: 10px;
+
+	h1 {
+		.reset;
+		font-family: @title-font-family;
+		font-size: 28px;
+		color: #fff;
+		text-align: center;
+	}
+}
+
+.App-toolbar {
+	background: darken( @app-primary-color, 10% );
+	padding: 10px;
+
+	h2 {
+		.reset;
+		color: #fff;
+		font-size: 14px;
+		font-weight: normal;
+	}
+}

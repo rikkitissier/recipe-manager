@@ -1,0 +1,59 @@
+@import '../../../less/_vars.less';
+@import '../../../less/_mixins.less';
+
+.App-labels {
+	background: @labels-background;
+	position: relative;
+
+	> ul {
+		.reset;
+		position: absolute;
+		top: 0;
+		bottom: 40px;
+		width: 100%;
+		overflow: auto;
+
+		> li {
+			font-size: 14px;
+			padding: 15px 10px;
+			color: fadeOut( @labels-font-color, 50% );
+			border-bottom: 1px solid darken( @labels-background, 3% );
+
+			&.is-active {
+				background: @labels-selected;
+				color: @labels-font-color;
+
+				> .fa {
+					color: @labels-font-color;
+				}
+			}
+
+			> .fa {
+				margin-right: 4px;
+				color: fadeOut( @labels-font-color, 50% );
+			}
+		}
+	}
+
+	> .App-labels-toolbar {
+		background: darken( @labels-background, 1.5% );
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		
+		> a {
+			display: table-cell;
+			width: 1%;
+			text-align: center;
+			font-size: 20px;
+			padding: 10px 0;
+			color: fadeOut( @labels-font-color, 70% );
+
+			&:hover {
+				background: darken( @labels-background, 4% );
+				color: @labels-font-color;
+			}
+		}
+	}
+}

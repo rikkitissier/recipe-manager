@@ -1,0 +1,28 @@
+@import '../../../less/_vars.less';
+@import '../../../less/_mixins.less';
+
+.App-recipes {
+	background: #fafafa;
+	
+	> ul {
+		.reset;
+		list-style: none;
+	}
+
+	.App-recipes-item {
+		.clearfix;
+		border-bottom: 1px solid lighten( desaturate( @app-primary-color, 50% ), 60% );
+
+		h4 {
+			.reset;
+			font-size: 18px;
+			font-weight: 300;
+		}
+
+		.App-recipes-item-photo {
+			width: 75px;
+			height: 75px;
+			float: left;
+		}	
+	}	
+}
