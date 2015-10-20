@@ -11,7 +11,7 @@
 
 	.App-recipes-item {
 		.clearfix;
-		border-bottom: 1px solid darken( @recipe-list-background, 8% );
+		height: 75px;
 
 		h4 {
 			.reset;
@@ -28,6 +28,10 @@
 
 		> div {
 			padding-top: 10px;
+		}
+
+		&.is-active {
+			background: @recipe-list-selected;
 		}
 	}
 

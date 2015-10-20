@@ -13,10 +13,3 @@ export function deleteRecipe(id) {
         id
     };
 }
-
-export function selectRecipe(id) {  
-    return {
-        type: types.SELECT_RECIPE,
-        id
-    };
-}

@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import LabelsList from './Labels/LabelsList';
 import RecipesList from './Recipes/RecipesList';
+import Recipe from './Recipe/Recipe';
 
 var AppLayout = React.createClass({
 	render: function () {
@@ -18,9 +19,13 @@ var AppLayout = React.createClass({
 					<RecipesList 
 						recipes={this.props.recipes}
 						selectedLabel={this.props.appState.selectedLabel}
+						selectedRecipe={this.props.appState.selectedRecipe}
 						recipeActions={this.props.recipeActions}
 						appActions={this.props.appStateActions} />
-					<div className='App-recipe'>A recipe</div>
+					<Recipe
+						recipe={this.props.recipe}
+						recipeActions={this.props.recipeActions}
+						appActions={this.props.appStateActions} />
 				</div>
 			</div>
 		)

@@ -1,10 +1,9 @@
 import * as types from '../constants/ActionTypes';
 
-export function addLabel(name, slug, id) {
+export function addLabel(title) {
     return {
         type: types.ADD_LABEL,
-        slug,
-        id
+        title
     };
 }
 

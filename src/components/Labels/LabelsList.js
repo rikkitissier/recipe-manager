@@ -2,9 +2,39 @@ import React from 'react';
 import mapValues from 'lodash/object/mapValues';
 import LabelsItem from './LabelsItem';
 import LabelsToolbar from './LabelsToolbar';
+import LabelsAddItem from './LabelsAddItem';
 import './labels.less';
 
 var LabelsList = React.createClass({
+	getInitialState: function () {
+		return {
+			addingItem: false
+		};
+	},
+
+	onClickAddLabel: function () {
+		this.setState({
+			addingItem: true
+		});
+	},
+
+	onAddKeyDown: function (e, input) {
+		switch( e.key ){
+			case "Enter":
+				let value = e.currentTarget.value;
+
+				this.setState({
+					addingItem: false
+				});
+
+				this.props.labelActions.addLabel( value );
+			case "Escape":
+				this.setState({
+					addingItem: false
+				});
+		}
+	},
+
 	render: function () {
 		return (
 			<div className='App-labels'>
@@ -29,8 +59,9 @@ var LabelsList = React.createClass({
 							)
 						}) 
 					}
+					{this.state.addingItem ? <LabelsAddItem onAddKeyDown={this.onAddKeyDown} /> : ''}
 				</ul>
-				<LabelsToolbar {...this.props.actions} />
+				<LabelsToolbar onClickAddLabel={this.onClickAddLabel} {...this.props.actions} />
 			</div>
 		)
 	}

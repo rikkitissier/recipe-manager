@@ -10,7 +10,7 @@ var RecipesList = React.createClass({
 
 		this.props.recipes.forEach( (recipe) => {
 			if( this.props.selectedLabel === 0 || recipe.labels.indexOf( this.props.selectedLabel ) !== -1 ){
-				items.push( <RecipesListItem key={recipe.id} title={recipe.title} photo={recipe.photos[0]} prep={recipe.prep} slug={recipe.slug} id={recipe.id} {...this.props.recipeActions} {...this.props.appActions} />	);
+				items.push( <RecipesListItem selected={this.props.selectedRecipe == recipe.id ? true : false} key={recipe.id} labels={recipe.labels} title={recipe.title} photo={recipe.photos[0]} prep={recipe.prep} slug={recipe.slug} id={recipe.id} {...this.props.recipeActions} {...this.props.appActions} />	);
 			}	
 		});
 
@@ -22,7 +22,6 @@ var RecipesList = React.createClass({
 
 		return (
 			<div className='App-recipes'>
-				<RecipesListToolbar {...this.props.actions} />
 				<ul>
 					{items.length ? items : <RecipesNoItems />}
 				</ul>

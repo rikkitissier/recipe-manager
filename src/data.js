@@ -1,6 +1,8 @@
 var data = {
 	appState: {
-		selectedLabel: 0
+		selectedLabel: 0,
+		selectedRecipe: 0,
+		selectedRecipeLabels: []
 	},
 	labels: [
 		{
@@ -33,7 +35,7 @@ var data = {
 			fave: false,
 			prep: "30 minutes",
 			photos: [
-				'https://placehold.it/350x350/CFD8DC'
+				'https://placehold.it/350x350/607D8B'
 			],
 			ingredients: [
 				{
@@ -69,7 +71,7 @@ var data = {
 			fave: true,
 			prep: "Less than 30 minutes",
 			photos: [
-				'https://placehold.it/350x350/CFD8DC'
+				'https://placehold.it/350x350/607D8B'
 			],
 			ingredients: [
 				{
@@ -98,7 +100,7 @@ var data = {
 			fave: true,
 			prep: "6 hours",
 			photos: [
-				'https://placehold.it/350x350/CFD8DC'
+				'https://placehold.it/350x350/607D8B'
 			],
 			ingredients:[
 				{

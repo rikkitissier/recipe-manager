@@ -9,21 +9,25 @@ import AppLayout from '../components/AppLayout';
 let mapStateToProps = (state) => ({
 	labels: state.labels,
 	recipes: state.recipes,
-	appState: state.appState
+	appState: state.appState,
+	recipe: state.recipes.find( (val) => ( val.id == state.appState.selectedRecipe ) )
 });
 
 var AppContainer = React.createClass({
 	render: function () {
-		const { labels, recipes, appState, dispatch } = this.props;
+		const { labels, recipes, appState, recipe, dispatch } = this.props;
 		const labelActions = bindActionCreators(LabelActions, dispatch);
 		const recipeActions = bindActionCreators(RecipeActions, dispatch);
 		const appStateActions = bindActionCreators(AppStateActions, dispatch);
 
+		console.log( recipe );
+		
 		return (
 			<AppLayout 
 				className='App'
 				labels={labels}
 				recipes={recipes}
+				recipe={recipe}
 				appState={appState}
 				labelActions={labelActions}
 				recipeActions={recipeActions}

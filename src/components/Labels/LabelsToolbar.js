@@ -5,7 +5,7 @@ var LabelsToolbar = React.createClass({
 	render: function () {
 		return (
 			<div className='App-labels-toolbar'>
-				<a href='#'><i className='fa fa-plus'></i></a>
+				<a href='#' onClick={this.props.onClickAddLabel}><i className='fa fa-plus'></i></a>
 				<a href='#'><i className='fa fa-pencil'></i></a>
 			</div>
 		)
