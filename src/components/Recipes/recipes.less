@@ -2,7 +2,14 @@
 @import '../../../less/_mixins.less';
 
 .App-recipes {
+	@shadow: darken( @recipe-list-background, 40% );
+
 	background: @recipe-list-background;
+
+	&.has-selected {
+		border-right: 1px solid fadeOut( @shadow, 90% );
+		box-shadow: 0px 1px 3px fadeOut( @shadow, 90% ), 0px 1px 25px fadeOut( @shadow, 75% );	
+	}	
 
 	> ul {
 		.reset;
@@ -22,6 +29,8 @@
 		.App-recipes-item-photo {
 			width: 75px;
 			height: 75px;
+			background-size: cover;
+			background-position: 50% 50%;
 			float: left;
 			margin-right: 10px;
 		}

@@ -35,7 +35,7 @@ var data = {
 			fave: false,
 			prep: "30 minutes",
 			photos: [
-				'https://placehold.it/350x350/607D8B'
+				'http://i.imgur.com/fZbvFdX.jpg'
 			],
 			ingredients: [
 				{
@@ -71,7 +71,7 @@ var data = {
 			fave: true,
 			prep: "Less than 30 minutes",
 			photos: [
-				'https://placehold.it/350x350/607D8B'
+				'http://i.imgur.com/68KnC7s.jpg'
 			],
 			ingredients: [
 				{
@@ -100,7 +100,7 @@ var data = {
 			fave: true,
 			prep: "6 hours",
 			photos: [
-				'https://placehold.it/350x350/607D8B'
+				'http://i.imgur.com/Mr5DPgA.jpg'
 			],
 			ingredients:[
 				{
