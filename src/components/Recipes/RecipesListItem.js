@@ -18,6 +18,7 @@ var RecipesListItem = React.createClass({
 				<div>
 					<h4>{this.props.title}</h4>
 					<p><small>Prep time: {this.props.prep}</small></p>
+					{( this.props.fave ) ? <span className='fa fa-heart'></span> : ''}
 				</div>
 			</li>
 		)

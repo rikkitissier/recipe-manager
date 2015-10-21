@@ -18,6 +18,7 @@
 
 	.App-recipes-item {
 		.clearfix;
+		position: relative;
 		height: 75px;
 
 		h4 {
@@ -41,6 +42,29 @@
 
 		&.is-active {
 			background: @recipe-list-selected;
+
+			&.is-fave span.fa {
+				background: darken( @recipe-list-background, 14% );
+				color: darken( @recipe-list-background, 50% );
+			}
+		}
+
+		&.is-fave span.fa {
+			@dims: 24px;
+
+			background: darken( @recipe-list-background, 7% );
+			color: darken( @recipe-list-background, 25% );
+			display: block;
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			font-size: 13px;
+			margin-top: -( @dims / 2 );
+			width: @dims;
+			height: @dims;
+			line-height: @dims + 2px;
+			border-radius: @dims;
+			text-align: center;
 		}
 	}
 
