@@ -2,7 +2,8 @@ var data = {
 	appState: {
 		selectedLabel: 0,
 		selectedRecipe: 0,
-		selectedRecipeLabels: []
+		selectedRecipeLabels: [],
+		editingRecipe: 0
 	},
 	labels: [
 		{

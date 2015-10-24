@@ -2,6 +2,7 @@ import React from 'react';
 import isUndefined from 'lodash/lang/isUndefined';
 import RecipeHeader from './RecipeHeader';
 import RecipeIngredients from './RecipeIngredients';
+import RecipeDirections from './RecipeDirections';
 import './recipe.less';
 
 var Recipe = React.createClass({
@@ -15,11 +16,11 @@ var Recipe = React.createClass({
 				<div className='App-recipe'>
 					<RecipeHeader recipe={this.props.recipe} />
 
+					<a href='#' onClick={() => { this.props.appActions.editRecipe( this.props.recipe.id )} }>Edit</a>
+
 					<div className='App-recipe-body'>
 						<RecipeIngredients recipe={this.props.recipe} />
-						<div className='App-recipe-directions'>
-							<h2>Directions</h2>
-						</div>
+						<RecipeDirections recipe={this.props.recipe} />
 					</div>
 				</div>
 			)

@@ -14,3 +14,10 @@ export function selectRecipe(id, labels) {
         labels
     };
 }
+
+export function editRecipe(id) {
+	return {
+		type: types.EDIT_RECIPE,
+		id
+	};
+}
