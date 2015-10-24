@@ -63,3 +63,81 @@
 		font-weight: normal;
 	}
 }
+
+.Dialog {
+
+	// The dark background behind the modal
+	.Dialog_modalBackground {
+		background: rgba(0,0,0,0.4);
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+
+		&.Dialog-appear-active,
+		&.Dialog-leave {
+			transition: all 0.3s ease-in-out;
+		}
+
+		&.Dialog-leave {
+			transition-delay: 0.2s; // When closing, leave a delay for the wrapper to fade out first
+		}
+
+		&.Dialog-appear,
+		&.Dialog-leave.Dialog-leave-active {
+			opacity: 0;
+		}
+
+		&.Dialog-appear.Dialog-appear-active,
+		&.Dialog-leave {
+			opacity: 1;	
+		}
+	}
+
+	// The content panel of the modal
+	.Dialog_wrapper {
+		max-width: 1000px;
+		min-height: 400px;
+		border-radius: 5px;
+		background: #fff;
+		margin: 3% auto;
+		box-shadow: 0px 5px 55px rgba(0,0,0,0.4);
+		position: relative;
+		z-index: 5000;
+
+		&.Dialog-appear-active,
+		&.Dialog-leave {
+			transition: all 0.4s ease-in-out;
+		}
+
+		&.Dialog-appear-active {
+			transition-delay: 0.2s; // When showing, leave a delay for the background to fade in first
+		}
+
+		&.Dialog-appear,
+		&.Dialog-leave.Dialog-leave-active {
+			opacity: 0;
+			transform: scale(0.7) translateY(150px) perspective(500px) rotateX(10deg) rotateY(5deg);
+		}
+
+		&.Dialog-appear.Dialog-appear-active,
+		&.Dialog-leave {
+			opacity: 1;
+			transform: scale(1) translateY(0) rotateX(0) rotateY(0);	
+		}
+	}
+
+	.Dialog_content {
+		h1 {
+			.reset;
+			font-size: 24px;
+			line-height: 1.5;
+			font-weight: 300;
+			background: #f5f5f5;
+			padding: 10px;
+			border-radius: 5px 5px 0 0;
+			border-bottom: 1px solid rgba(0,0,0,0.05);
+		}
+	}	
+}
